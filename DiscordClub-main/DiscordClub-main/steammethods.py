@@ -90,7 +90,7 @@ def teamgen_command(message):
 
 def sale_command(message):
     x = message.content.split()
-    url = "https://store.steampowered.com/search/?sort_by=Reviews_DESC&term={x[1]}&specials=1&supportedlang=english&ndl=1"
+    url = f"https://store.steampowered.com/search/?sort_by=Reviews_DESC&term={x[1]}&specials=1&supportedlang=english&ndl=1"
     session_id = {'cookie': 'sessionid=21276008a014b2b56c02855f'}
     page = requests.get(url, headers=session_id)
     soup = bs4.BeautifulSoup(page.text,"lxml")

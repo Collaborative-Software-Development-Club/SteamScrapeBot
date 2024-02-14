@@ -18,7 +18,7 @@ if __name__=='__main__':
    app.run()
 
 def run_discord_bot():
-    TOKEN = "Your Token"
+    TOKEN = ""
     client = discord.Client(command_prefix='!',intents=discord.Intents.all())
 
     @client.event
@@ -32,7 +32,7 @@ def run_discord_bot():
             items = message.content.split()
             match items[0]:
                 case '!help':
-                    await message.channel.send("Commands: !teamgen gameName, !sale gameName, !ratings gameName, !random category")
+                    await message.channel.send("Commands: \n!teamgen team# \n!sale category \n!ratings category \n!random category")
                 case '!teamgen':
                     await message.channel.send("\n".join(teamgen_command(message)))
                 case '!sale':
